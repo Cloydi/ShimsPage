@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moments · For Shim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Lato:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="moments-style.css">
+  <link rel="icon" href="../logo.png">
+</head>
+<body>
+
+<canvas id="blossom-canvas"></canvas>
+<div class="bg-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="corner corner-tl">
+  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
+</div>
+<div class="corner corner-br">
+  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
+</div>
+
+<a class="back-btn" href="../mainMenu.html">
+  <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  Return
+</a>
+
+<!-- Header -->
+<header class="page-header">
+  <div class="eyebrow">Chronicles of Us</div>
+  <h1>Moments</h1>
+  <div class="tagline">Treasured memories, written in petals</div>
+  <div class="header-divider"></div>
+</header>
+
+<!-- Filter tabs -->
+<div class="filter-row" id="filter-row">
+  <button class="filter-tab active" data-filter="all">All</button>
+  <button class="filter-tab" data-filter="adventure">Adventure</button>
+  <button class="filter-tab" data-filter="quiet">Quiet</button>
+  <button class="filter-tab" data-filter="food">Food</button>
+  <button class="filter-tab" data-filter="milestone">Milestone</button>
+</div>
+
+<!-- Carousel -->
+<div class="carousel-shell" id="carousel-shell">
+  <button class="carousel-arrow left" id="arrow-left" aria-label="Previous">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+
+  <div class="carousel-track-wrap" id="carousel-track-wrap">
+    <div class="carousel-track" id="carousel-track"></div>
+  </div>
+
+  <button class="carousel-arrow right" id="arrow-right" aria-label="Next">
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<!-- Dots -->
+<div class="carousel-dots" id="carousel-dots"></div>
+
+<!-- Caption panel below carousel -->
+<div class="carousel-caption-panel" id="caption-panel">
+  <div class="caption-panel-date" id="panel-date"></div>
+  <div class="caption-panel-title" id="panel-title"></div>
+  <div class="caption-panel-tag" id="panel-tag"></div>
+  <div class="caption-panel-text" id="panel-caption"></div>
+  <div class="caption-panel-mood" id="panel-mood"></div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner" id="lightbox-inner">
+    <div class="lightbox-close" id="lightbox-close">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </div>
+    <div class="lightbox-media-wrap">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+      <video class="lightbox-vid" id="lightbox-video" autoplay loop muted playsinline controls></video>
+    </div>
+    <div class="lightbox-body">
+      <div class="lightbox-date" id="lightbox-date"></div>
+      <div class="lightbox-title" id="lightbox-title"></div>
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+</div>
+
+<script src="moments-script.js"></script>
+</body>
+</html>

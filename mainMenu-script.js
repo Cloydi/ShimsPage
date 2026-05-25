@@ -150,9 +150,15 @@ capTitle.textContent = sceneData[0].title;
 capSub.textContent   = sceneData[0].sub;
 setTimeout(() => caption.classList.add('visible'), 1200);
 
+// ── NAVIGATION ──────────────────────────────────────────────────────
+const NAV_ROUTES = {
+  1: 'momentsPage/moments.html',   // Moments
+};
+
 // ── CLICK RIPPLE ────────────────────────────────────────────────────
 document.querySelectorAll('.menu-item').forEach(item => {
   item.addEventListener('click', function(e) {
+    const sceneIdx = parseInt(this.dataset.scene, 10);
     const label = this.querySelector('.menu-label').textContent;
     const ripple = document.createElement('span');
     ripple.style.cssText = `
@@ -164,7 +170,13 @@ document.querySelectorAll('.menu-item').forEach(item => {
     `;
     this.style.position = 'relative';
     this.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 700);
+
+    // Navigate if this item has a route
+    if (NAV_ROUTES[sceneIdx]) {
+      setTimeout(() => { window.location.href = NAV_ROUTES[sceneIdx]; }, 320);
+    } else {
+      setTimeout(() => ripple.remove(), 700);
+    }
   });
 });
 
