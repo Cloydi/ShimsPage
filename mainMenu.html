@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SHIM'S PAGE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mainMenu-style.css">
+  <link rel="icon" href="logo.png">
+
+</head>
+<body>
+
+<!-- Cherry blossom canvas -->
+<canvas id="blossom-canvas"></canvas>
+<!-- Subtle particle overlay -->
+<canvas id="particle-canvas"></canvas>
+
+<div class="bg-overlay"></div>
+<div class="scanlines"></div>
+
+<!-- Corner ornaments -->
+<div class="corner corner-tl">
+  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
+</div>
+<div class="corner corner-br">
+  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
+</div>
+
+<div class="screen">
+
+  <!-- ── LEFT ── -->
+  <div class="left-panel">
+    <div class="logo">
+      <div class="logo-title">SHIMMERY'S<br><span>PAGE</span></div>
+      <div class="logo-sub">Chronicles of Us</div>
+      <div class="logo-divider"></div>
+    </div>
+
+    <nav id="main-nav">
+      <div class="menu-item" data-scene="0" data-hint="Begin your journey">
+        <div class="menu-bar"></div>
+        <div class="menu-rune">
+          <!-- sword icon -->
+          <svg viewBox="0 0 24 24"><path d="M3 21l9-9M20 4l-8 8M3 21l3-1 13-13-2-2L3 21z"/></svg>
+        </div>
+        <span class="menu-label">The Start</span>
+        <span class="menu-hint">Begin</span>
+      </div>
+
+      <div class="menu-item" data-scene="1" data-hint="Continue saga">
+        <div class="menu-bar"></div>
+        <div class="menu-rune">
+          <!-- diamondicon -->
+          <svg viewBox="0 0 24 24"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="8.5" x2="22" y2="8.5"/></svg>
+        </div>
+        <span class="menu-label">Moments</span>
+        <span class="menu-hint">Explore</span>
+      </div>
+
+      <div class="menu-item" data-scene="2" data-hint="Summon allies">
+        <div class="menu-bar"></div>
+        <div class="menu-rune">
+          <!-- book icon -->
+          <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 012-2h12v14"/><path d="M4 19a2 2 0 002 2h12a2 2 0 002-2"/><path d="M9 7h6M9 11h4"/></svg>
+        </div>
+        <span class="menu-label">Messages</span>
+        <span class="menu-hint">Read</span>
+      </div>
+
+      <div class="menu-item" data-scene="3" data-hint="Relics & lore">
+        <div class="menu-bar"></div>
+        <div class="menu-rune">
+          <!-- game icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-controller" viewBox="0 0 16 16">
+            <path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1z"/>
+            <path d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729q.211.136.373.297c.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466s.34 1.78.364 2.606c.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527s-2.496.723-3.224 1.527c-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.3 2.3 0 0 1 .433-.335l-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a14 14 0 0 0-.748 2.295 12.4 12.4 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.4 12.4 0 0 0-.339-2.406 14 14 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27s-2.063.091-2.913.27"/>
+          </svg>
+        </div>
+        <span class="menu-label">Custom Game</span>
+        <span class="menu-hint">Play</span>
+      </div>
+
+      <div class="menu-item" data-scene="4" data-hint="Adjust realm">
+        <div class="menu-bar"></div>
+        <div class="menu-rune">
+          <!-- settings icon -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        </div>
+        <span class="menu-label">Extras</span>
+        <span class="menu-hint">See</span>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ── RIGHT ── -->
+  <div class="right-panel" id="right-panel">
+
+    <!-- Scene 0: The Start -->
+    <div class="scene active" id="scene-0">
+      <img class="scene-art" src="assets/NewGameScene.jpeg" alt="The Start Scene"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="scene-placeholder" style="display:none;">
+        <div class="placeholder-badge">scene · 1 of 5</div>
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21l9-9M20 4l-8 8M3 21l3-1 13-13-2-2L3 21z"/></svg>
+        </div>
+        <div class="placeholder-label">
+          The Start
+          <strong>Replace src="assets/NewGameScene.jpeg"</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scene 1: Continue -->
+    <div class="scene" id="scene-1">
+      <img class="scene-art" src="assets/image.jpg" alt="Continue Scene"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="scene-placeholder" style="display:none;">
+        <div class="placeholder-badge">scene · 2 of 5</div>
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 012-2h12v14"/><path d="M4 19a2 2 0 002 2h12a2 2 0 002-2"/><path d="M9 7h6M9 11h4"/></svg>
+        </div>
+        <div class="placeholder-label">
+          Continue
+          <strong>Replace src="images/continue.jpg"</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scene 2: Multiplayer -->
+    <div class="scene" id="scene-2">
+      <img class="scene-art" src="assets/MessagesScene.jpg" alt="Multiplayer Scene"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="scene-placeholder" style="display:none;">
+        <div class="placeholder-badge">scene · 3 of 5</div>
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6h6c3.3 0 6 2.7 6 6"/><circle cx="18" cy="7" r="2"/></svg>
+        </div>
+        <div class="placeholder-label">
+          Multiplayer
+          <strong>Replace src="images/multiplayer.jpg"</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scene 3: Collection -->
+    <div class="scene" id="scene-3">
+      <video class="scene-art" id="scene-3-video"
+             autoplay loop muted playsinline
+             onerror="this.style.display='none'; document.getElementById('scene-3-placeholder').style.display='flex';">
+        <source src="assets/GamesScene.mp4" type="video/mp4">
+      </video>
+      <div class="scene-placeholder" id="scene-3-placeholder" style="display:none;">
+        <div class="placeholder-badge">scene · 4 of 5 · video</div>
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <rect x="2" y="6" width="15" height="13" rx="2"/>
+            <path d="M17 10l5-3v10l-5-3"/>
+            <line x1="6" y1="12" x2="11" y2="12"/>
+            <line x1="8.5" y1="9.5" x2="8.5" y2="14.5"/>
+          </svg>
+        </div>
+        <div class="placeholder-label">
+          Collection · Video Scene
+          <strong>Replace src="videos/collection.mp4"</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scene 4: Settings -->
+    <div class="scene" id="scene-4">
+      <img class="scene-art" src="assets/ExtrasScene.jpeg" alt="Settings Scene"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="scene-placeholder" style="display:none;">
+        <div class="placeholder-badge">scene · 5 of 5</div>
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        </div>
+        <div class="placeholder-label">
+          Settings
+          <strong>Replace src="images/settings.jpg"</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caption -->
+    <div class="scene-caption" id="scene-caption">
+      <h3 id="caption-title">SAKURA BLADE</h3>
+      <p id="caption-sub">Chronicles of the Eternal Petal</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="mainMenu-script.js"></script>
+</body>
+</html>
