@@ -150,15 +150,9 @@ capTitle.textContent = sceneData[0].title;
 capSub.textContent   = sceneData[0].sub;
 setTimeout(() => caption.classList.add('visible'), 1200);
 
-// ── NAVIGATION ──────────────────────────────────────────────────────
-const NAV_ROUTES = {
-  1: 'momentsPage/moments.html',   // Moments
-};
-
 // ── CLICK RIPPLE ────────────────────────────────────────────────────
 document.querySelectorAll('.menu-item').forEach(item => {
   item.addEventListener('click', function(e) {
-    const sceneIdx = parseInt(this.dataset.scene, 10);
     const label = this.querySelector('.menu-label').textContent;
     const ripple = document.createElement('span');
     ripple.style.cssText = `
@@ -170,13 +164,7 @@ document.querySelectorAll('.menu-item').forEach(item => {
     `;
     this.style.position = 'relative';
     this.appendChild(ripple);
-
-    // Navigate if this item has a route
-    if (NAV_ROUTES[sceneIdx]) {
-      setTimeout(() => { window.location.href = NAV_ROUTES[sceneIdx]; }, 320);
-    } else {
-      setTimeout(() => ripple.remove(), 700);
-    }
+    setTimeout(() => ripple.remove(), 700);
   });
 });
 
@@ -187,3 +175,23 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+// ── PAGE NAVIGATION ──────────────────────────────────────────────────
+// Map menu scene index → page path (relative to mainMenu.html location)
+const NAV_ROUTES = {
+  1: 'momentsPage/moments.html',   // Moments
+  2: 'messagesPage/messages.html', // Messages
+  // Add more routes here as pages are built:
+  // 0: 'startPage/start.html',
+  // 3: 'gamePage/game.html',
+  // 4: 'extrasPage/extras.html',
+};
+
+document.querySelectorAll('.menu-item').forEach(item => {
+  item.addEventListener('click', function () {
+    const idx = parseInt(this.dataset.scene, 10);
+    if (NAV_ROUTES[idx]) {
+      // Small delay so the ripple is visible before navigating
+      setTimeout(() => { window.location.href = NAV_ROUTES[idx]; }, 320);
+    }
+  });
+});

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages · For Shim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Lato:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="messages-style.css">
+  <link rel="icon" href="../logo.png">
+</head>
+<body>
+
+<canvas id="blossom-canvas"></canvas>
+<div class="bg-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="corner corner-tl">
+  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
+</div>
+<div class="corner corner-br">
+  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
+</div>
+
+<a class="back-btn" href="../mainMenu.html">
+  <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  Return
+</a>
+
+<header class="page-header">
+  <div class="eyebrow">Chronicles of Us</div>
+  <h1>Passion <span>Scrolls</span></h1>
+  <div class="tagline">Feelings in Scriptures</div>
+  <div class="header-divider"></div>
+</header>
+
+<div class="scrolls-grid" id="scrolls-grid">
+  <!-- Scrolls injected by JS -->
+</div>
+
+<!-- Unfurl overlay -->
+<div class="unfurl-overlay" id="unfurl-overlay">
+  <div class="unfurl-backdrop" id="unfurl-backdrop"></div>
+  <div class="unfurl-scroll" id="unfurl-scroll">
+    <div class="unfurl-top-rod"></div>
+    <div class="unfurl-paper" id="unfurl-paper">
+      <div class="unfurl-paper-inner" id="unfurl-paper-inner">
+        <div class="unfurl-seal" id="unfurl-seal"></div>
+        <div class="unfurl-from" id="unfurl-from"></div>
+        <div class="unfurl-title" id="unfurl-title"></div>
+        <div class="unfurl-divider"></div>
+        <div class="unfurl-body" id="unfurl-body"></div>
+        <div class="unfurl-signature" id="unfurl-signature"></div>
+        <div class="unfurl-date" id="unfurl-date"></div>
+      </div>
+    </div>
+    <div class="unfurl-bottom-rod"></div>
+    <button class="unfurl-close" id="unfurl-close">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="messages-script.js"></script>
+</body>
+</html>
