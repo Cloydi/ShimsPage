@@ -28,8 +28,8 @@ html, body {
 .bg-overlay {
   position: fixed; inset: 0; z-index: 1;
   background:
-    radial-gradient(ellipse 65% 55% at 12% 25%, rgba(255,230,242,0.88) 0%, transparent 65%),
-    radial-gradient(ellipse 55% 70% at 88% 75%, rgba(255,240,250,0.65) 0%, transparent 65%);
+    radial-gradient(ellipse 65% 55% at 12% 25%, rgba(255,230,242,0.88) 0%, transparent 80%),
+    radial-gradient(ellipse 55% 70% at 88% 75%, rgba(255,240,250,0.65) 0%, transparent 80%);
   pointer-events: none;
 }
 .scanlines {
@@ -241,7 +241,7 @@ html, body {
 .unfurl-backdrop {
   position: absolute; inset: 0;
   background: rgba(253,240,245,0.88);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(0.5px);
 }
 
 /* The big scroll */

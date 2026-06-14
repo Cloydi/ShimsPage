@@ -176,14 +176,12 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 // ── PAGE NAVIGATION ──────────────────────────────────────────────────
-// Map menu scene index → page path (relative to mainMenu.html location)
 const NAV_ROUTES = {
-  1: 'momentsPage/moments.html',   // Moments
-  2: 'messagesPage/messages.html', // Messages
-  // Add more routes here as pages are built:
-  // 0: 'startPage/start.html',
-  // 3: 'gamePage/game.html',
-  // 4: 'extrasPage/extras.html',
+  0: 'startPage/start.html',
+  1: 'momentsPage/moments.html', 
+  2: 'messagesPage/messages.html', 
+  //3: 'gamePage/game.html',
+  4: 'extrasPage/extras.html',
 };
 
 document.querySelectorAll('.menu-item').forEach(item => {

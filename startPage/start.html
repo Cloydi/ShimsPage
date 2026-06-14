@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Start · For Shim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="startPage-style.css">
+</head>
+<body>
+
+<canvas id="blossom-canvas"></canvas>
+<div class="bg-overlay"></div>
+<div class="scanlines"></div>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" onclick="closeLightbox()">✕ &nbsp;Close</div>
+  <div class="lightbox-inner">
+    <div class="lb-arrow lb-prev" id="lb-prev" onclick="lbStep(-1)">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </div>
+    <img src="" id="lightbox-img" alt="">
+    <div class="lb-arrow lb-next" id="lb-next" onclick="lbStep(1)">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="lb-counter" id="lb-counter"></div>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <a class="back-btn" href="../mainMenu.html">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Menu
+  </a>
+  <div class="page-heading">
+    <div class="eyebrow">Chapter I</div>
+    <h1>The <span>Start</span></h1>
+    <div class="sub">Year 0 through Year 7 · The Kindling</div>
+  </div>
+</header>
+
+<!-- ── TIMELINE ── -->
+<section class="timeline-section">
+  <div class="spine"></div>
+
+  <!-- Each year is built by JS from the YEARS data below -->
+  <div id="timeline-root"></div>
+
+</section>
+
+<footer>
+  <a href="../mainMenu.html">← Return to Chronicles</a>
+  &nbsp;·&nbsp; Shimmery's Page
+</footer>
+
+<script src="startPage-script.js"></script>
+</body>
+</html>
