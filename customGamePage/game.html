@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Game · Jigsaw</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Lato:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game-style.css">
+  <link rel="icon" href="../logo.png">
+</head>
+<body>
+
+<canvas id="blossom-canvas"></canvas>
+<div class="bg-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="corner corner-tl">
+  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
+</div>
+<div class="corner corner-br">
+  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
+</div>
+
+<a class="back-btn" href="../mainMenu.html">
+  <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  Return
+</a>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="eyebrow">Custom Game</div>
+  <h1>Life's a <span>Puzzle</span></h1>
+  <div class="tagline">Put us back together</div>
+  <div class="header-divider"></div>
+</header>
+
+<!-- CONTROLS BAR -->
+<div class="controls-bar">
+  <div class="ctrl-group">
+    <label class="ctrl-label">Image</label>
+    <div class="file-pick" id="file-pick">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span id="file-pick-label">Choose photo</span>
+      <input type="file" id="img-file" accept="image/*">
+    </div>
+  </div>
+  <div class="ctrl-group">
+    <label class="ctrl-label">Difficulty</label>
+    <div class="diff-btns">
+      <button class="diff-btn active" data-grid="3">3×3</button>
+      <button class="diff-btn" data-grid="4">4×4</button>
+      <button class="diff-btn" data-grid="5">5×5</button>
+      <button class="diff-btn" data-grid="6">6×6</button>
+    </div>
+  </div>
+  <div class="ctrl-group ctrl-right">
+    <button class="action-btn" id="btn-shuffle">
+      <svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+      Shuffle
+    </button>
+    <button class="action-btn action-btn--ghost" id="btn-peek">
+      <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      Peek
+    </button>
+    <button class="action-btn action-btn--ghost" id="btn-solve">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Solve
+    </button>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-val" id="stat-moves">0</span>
+    <span class="stat-lbl">moves</span>
+  </div>
+  <div class="stat-sep">❀</div>
+  <div class="stat">
+    <span class="stat-val" id="stat-time">0:00</span>
+    <span class="stat-lbl">time</span>
+  </div>
+  <div class="stat-sep">❀</div>
+  <div class="stat">
+    <span class="stat-val" id="stat-left">—</span>
+    <span class="stat-lbl">pieces left</span>
+  </div>
+</div>
+
+<!-- GAME AREA -->
+<div class="game-area">
+
+  <!-- TRAY: scrambled pieces -->
+  <div class="tray-wrap">
+    <div class="tray-label">Pieces</div>
+    <div class="tray" id="tray"></div>
+  </div>
+
+  <!-- BOARD: drop target -->
+  <div class="board-wrap">
+    <div class="board-label" id="board-label">Board</div>
+    <div class="board" id="board"></div>
+    <!-- ghost preview image -->
+    <div class="board-ghost" id="board-ghost"></div>
+  </div>
+
+</div>
+
+<!-- WIN OVERLAY -->
+<div class="win-overlay" id="win-overlay">
+  <div class="win-box">
+    <div class="win-emoji">🌸</div>
+    <h2 class="win-title">You did it!</h2>
+    <p class="win-sub">The picture is complete — just like us.</p>
+    <div class="win-stats">
+      <span id="win-moves"></span> moves &nbsp;·&nbsp; <span id="win-time"></span>
+    </div>
+    <button class="win-btn" id="win-play-again">Play Again</button>
+  </div>
+</div>
+
+<!-- PEEK OVERLAY -->
+<div class="peek-overlay" id="peek-overlay">
+  <img id="peek-img" src="" alt="Full image">
+  <p class="peek-hint">Click anywhere to close</p>
+</div>
+
+<script src="game-script.js"></script>
+</body>
+</html>

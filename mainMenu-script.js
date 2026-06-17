@@ -180,7 +180,7 @@ const NAV_ROUTES = {
   0: 'startPage/start.html',
   1: 'momentsPage/moments.html', 
   2: 'messagesPage/messages.html', 
-  //3: 'gamePage/game.html',
+  3: 'customGamePage/game.html',
   4: 'extrasPage/extras.html',
 };
 

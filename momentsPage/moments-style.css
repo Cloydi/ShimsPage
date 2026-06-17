@@ -79,6 +79,7 @@ html, body {
   letter-spacing: 0.35em; text-transform: uppercase;
   color: var(--text-mid); margin-top: 10px;
 }
+.page-header h1 span { color: var(--sakura); }
 .header-divider {
   width: 100px; height: 1px;
   background: linear-gradient(to right, transparent, var(--sakura), transparent);
