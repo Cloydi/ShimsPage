@@ -115,8 +115,13 @@
 
     <!-- Scene 1: Continue -->
     <div class="scene" id="scene-1">
-      <img class="scene-art" src="assets/image.jpg" alt="Continue Scene"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <!--<img class="scene-art" src="assets/image.jpg" alt="Continue Scene"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"> -->
+      <video class="scene-art" id="scene-3-video"
+             autoplay loop muted playsinline
+             onerror="this.style.display='none'; document.getElementById('scene-3-placeholder').style.display='flex';">
+        <source src="assets/file.mp4" type="video/mp4">
+      </video>
       <div class="scene-placeholder" style="display:none;">
         <div class="placeholder-badge">scene · 2 of 5</div>
         <div class="placeholder-icon">

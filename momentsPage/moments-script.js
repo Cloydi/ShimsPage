@@ -157,6 +157,17 @@ const ALL_MEMORIES = [
     mediaType: 'video',
     fav: true,
   },
+  {
+    id: 11,
+    title: 'Sunday Morning',
+    date: '2024-09-15',
+    tag: 'quiet',
+    caption: 'Coffee, silence, and you. That was enough.',
+    mood: '☕',
+    imgSrc: 'assets/moment9.jpeg',
+    mediaType: 'image',
+    fav: true,
+  },
 ];
 
 const TAG_LABELS = { adventure: 'Adventure', quiet: 'Quiet', food: 'Food', milestone: 'Milestone' };
