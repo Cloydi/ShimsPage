@@ -7,9 +7,9 @@
 const VINYLS = [
   {
     id: 'v0',
-    title: 'Tagu-taguan',
-    artist: 'For Shim',
-    src: '../assets/music/track0.mp3',
+    title: 'About You',
+    artist: 'The 1975',
+    src: '../assets/music/The 1975 - About You (Official).mp3',
     color1: '#b03070', color2: '#6a0e38', grooveColor: 'rgba(200,60,110,.32)', labelColor: '#d94f87',
   },
   {
