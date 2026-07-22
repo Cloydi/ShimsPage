@@ -77,11 +77,16 @@ function animatePetals(t) {
 requestAnimationFrame(animatePetals);
 
 // ── PIN LOGIC ─────────────────────────────────────────────────────────
-// ⚠️  Change this to your real PIN. For better security, replace the
-//     plain-text comparison below with a hashed check (e.g. SHA-256).
-const CORRECT_PIN = '081319';
+// The PIN itself is never stored here — only a SHA-256 hash of it.
+// Anyone inspecting this file sees the hash below, not the actual PIN.
+const CORRECT_PIN_HASH = '472067dbc3dd896ed06d3e8075351e1ffc4449492ee918477398b02c5bcc4d71';
 const PIN_LENGTH  = 6;
 const MAX_ATTEMPTS = 5;
+
+async function sha256Hex(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 let entered   = '';
 let attempts  = 0;
@@ -193,8 +198,9 @@ function handleDigit(digit) {
 
   if (entered.length === PIN_LENGTH) {
     // Small delay so the last dot fills visibly before check
-    setTimeout(() => {
-      if (entered === CORRECT_PIN) {
+    setTimeout(async () => {
+      const enteredHash = await sha256Hex(entered);
+      if (enteredHash === CORRECT_PIN_HASH) {
         triggerSuccess();
       } else {
         attempts++;

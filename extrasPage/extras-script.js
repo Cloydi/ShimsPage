@@ -14,23 +14,23 @@ const VINYLS = [
   },
   {
     id: 'v1',
-    title: 'Our Song',
-    artist: 'For Shim',
-    src: '../assets/music/track1.mp3',
+    title: 'Sanctuary',
+    artist: 'Joji',
+    src: '../assets/music/Joji - Sanctuary.mp3',
     color1: '#6a2e90', color2: '#30103e', grooveColor: 'rgba(140,60,190,.32)', labelColor: '#b070e0',
   },
   {
     id: 'v2',
-    title: 'Puso Ko',
-    artist: 'For Shim',
-    src: '../assets/music/track2.mp3',
+    title: 'luther',
+    artist: 'Kendrick Lamar',
+    src: '../assets/music/Kendrick Lamar - luther (Official Audio) [HfWLgELllZs].mp3',
     color1: '#b83828', color2: '#6a1210', grooveColor: 'rgba(200,70,50,.32)', labelColor: '#e07060',
   },
   {
     id: 'v3',
-    title: 'Ikaw',
-    artist: 'For Shim',
-    src: '../assets/music/track3.mp3',
+    title: 'Snooze',
+    artist: 'SZA',
+    src: '../assets/music/SZA - Snooze (Audio).mp3',
     color1: '#286090', color2: '#0e2840', grooveColor: 'rgba(50,100,170,.32)', labelColor: '#5090c8',
   },
   {
@@ -99,7 +99,7 @@ VINYLS.forEach(v => {
 // ══════════════════════════════════════════════════════
 //  PLAYER STATE
 // ══════════════════════════════════════════════════════
-const audio   = document.getElementById('audio-el');
+const audio   = window.PersistentAudio.audio;
 const tonearm = document.getElementById('tonearm');
 const pVinyl  = document.getElementById('player-vinyl');
 const dropRing  = document.getElementById('drop-ring');
@@ -125,15 +125,17 @@ function fmt(s) {
 function setPlaying(on) {
   playing = on;
   if (on) {
-    audio.play().catch(()=>{});
+    window.PersistentAudio.play();
     pVinyl.classList.remove('slowing'); pVinyl.classList.add('spinning');
     tonearm.classList.remove('parked','landing'); tonearm.classList.add('playing');
+    dropRing.classList.add('playing');
     playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
   } else {
-    audio.pause();
+    window.PersistentAudio.pause();
     pVinyl.classList.remove('spinning'); pVinyl.classList.add('slowing');
     setTimeout(()=>{ if(!playing) pVinyl.classList.remove('slowing'); }, 3500);
     tonearm.classList.remove('playing'); tonearm.classList.add('landing');
+    dropRing.classList.remove('playing');
     playIcon.innerHTML = '<polygon points="5 3 19 12 5 21"/>';
   }
 }
@@ -155,14 +157,15 @@ function loadVinyl(v, autoplay = true) {
   progWrap.classList.add('visible');
   ctrlRow.classList.add('visible');
 
-  audio.src = v.src; audio.load();
+  window.PersistentAudio.load(v, false);
   if (autoplay) setPlaying(true);
 }
 
 function eject() {
   if (!currentV) return;
   setPlaying(false);
-  audio.src = '';
+  dropRing.classList.remove('playing');
+  window.PersistentAudio.eject();
   const vid = currentV.id;
   currentV = null;
   setTimeout(() => {
@@ -293,3 +296,45 @@ for(let i=0;i<80;i++){const p=rpt();p.y=Math.random()*innerHeight;pts.push(p);}
 function drwp(c,p){c.save();c.translate(p.x,p.y);c.rotate(p.angle);c.globalAlpha=p.alpha;c.beginPath();c.ellipse(0,0,p.size*.5,p.size,0,0,Math.PI*2);const g=c.createRadialGradient(0,-p.size*.3,0,0,0,p.size);g.addColorStop(0,`hsla(${p.hue},85%,88%,1)`);g.addColorStop(.5,`hsla(${p.hue},75%,72%,.9)`);g.addColorStop(1,`hsla(${p.hue},65%,60%,0)`);c.fillStyle=g;c.fill();c.restore();}
 function anim(){bx.clearRect(0,0,bc.width,bc.height);for(const p of pts){p.sway+=p.swaySpeed;p.angle+=p.spin;p.x+=p.speedX+Math.sin(p.sway)*p.swayAmp;p.y+=p.speedY;if(p.y>innerHeight+20||p.x<-60||p.x>innerWidth+60)Object.assign(p,rpt());drwp(bx,p);}requestAnimationFrame(anim);}
 requestAnimationFrame(anim);
+
+// ══════════════════════════════════════════════════════
+//  RESUME FROM ANOTHER PAGE
+//  If a vinyl is already loaded/playing (started here, then the
+//  person navigated away and came back), reflect that in the UI
+//  instead of restarting it.
+// ══════════════════════════════════════════════════════
+(function syncFromPersisted(){
+  const s = window.PersistentAudio.getState();
+  if (!s.track) return;
+  const v = VINYLS.find(x => x.id === s.track.id);
+  if (!v) return;
+
+  currentV = v;
+  document.getElementById(v.id).classList.add('on-player');
+  pVinyl.innerHTML = buildSVG(v, 200);
+  pVinyl.classList.add('visible');
+  dropPrompt.classList.add('hidden');
+  npTitle.textContent = v.title;
+  npArtist.textContent = v.artist;
+  nowPlaying.classList.add('visible');
+  progWrap.classList.add('visible');
+  ctrlRow.classList.add('visible');
+
+  playing = !audio.paused; // reflects whether the browser actually resumed audio
+  if (playing) {
+    pVinyl.classList.add('spinning');
+    tonearm.classList.add('playing');
+    dropRing.classList.add('playing');
+    playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+  } else {
+    tonearm.classList.add('landing');
+    playIcon.innerHTML = '<polygon points="5 3 19 12 5 21"/>';
+    if (s.playing) toast('Tap play to resume');
+  }
+
+  if (isFinite(audio.duration) && audio.duration) {
+    progFill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+    timeCur.textContent = fmt(audio.currentTime);
+    timeDur.textContent = fmt(audio.duration);
+  }
+})();
