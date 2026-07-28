@@ -4,9 +4,9 @@
 const YEARS = [
   {
     num: 0,
-    label: 'Year Zero · The Beginning',
+    label: 'Year Zero · Dorm Best Friends',
     title: 'Where It All\nBegan',
-    body: 'Every great story has its first page. This is ours — the moment before everything changed, the quiet instant where two worlds first brushed against each other and decided to stay.',
+    body: 'Proximity was the ink that wrote the first page of our story. Late nights watching movies. Food and laughter shared. Great friendships were formed.',
     photos: [
       { src: 'assets/year-0-A.jpeg', caption: 'Year Zero' },
       { src: 'assets/year-0-B.jpeg', caption: 'Year Zero' },
@@ -18,9 +18,12 @@ const YEARS = [
     num: 1,
     label: 'Year One · First Steps',
     title: 'Learning to\nWalk Together',
-    body: 'The tentative firsts — first laughs shared, first inside jokes formed, first silences that felt comfortable rather than strange. The year of discovery.',
+    body: 'Timing was perfect. Nights were ours. Moments forged a flame that will continue to burn.',
     photos: [
-      { src: '../assets/year1.jpg', caption: 'Year One' },
+      { src: 'assets/year-1-A.jpeg', caption: 'Year One' },
+      { src: 'assets/year-1-B.jpeg', caption: 'Year One' },
+      { src: 'assets/year-1-C.jpeg', caption: 'Year One' },
+      { src: 'assets/year-1-D.jpeg', caption: 'Year One' },
     ]
   },
   {
@@ -29,16 +32,18 @@ const YEARS = [
     title: 'Roots Taking\nHold',
     body: 'What was new became familiar. What was familiar became precious. The second year was a settling — not stagnation, but the way a tree sends its roots deeper into the earth.',
     photos: [
-      { src: '../assets/year2.jpg', caption: 'Year Two' },
+      { src: 'assets/year-2-A.jpeg', caption: 'Year Two' },
+      { src: 'assets/year-2-B.webp', caption: 'Year Two' },
     ]
   },
   {
     num: 3,
     label: 'Year Three · Growth',
     title: 'Blooming in\nFull Season',
-    body: 'The third year came in color. Every challenge faced together made the bond stronger; every celebration sweeter. This was the year that confirmed what had always been suspected.',
+    body: 'The distance never wilts the flower, it only colors it more brightly.',
     photos: [
-      { src: '../assets/year3.jpg', caption: 'Year Three' },
+      { src: 'assets/year-3-B.jpeg', caption: 'Year Three' },
+      { src: 'assets/year-3-A.jpeg', caption: 'Year Three' },
     ]
   },
   {
@@ -47,7 +52,7 @@ const YEARS = [
     title: 'Through Every\nSeason',
     body: 'Not all chapters are soft. Some are forged in difficulty, in distance, in the effort it takes to choose each other again and again. This year tested and proved.',
     photos: [
-      { src: '../assets/year4.jpg', caption: 'Year Four' },
+      { src: 'assets/year-4-A.webp', caption: 'Year Four' },
     ]
   },
   {
@@ -56,7 +61,7 @@ const YEARS = [
     title: 'Half a Decade\nof Us',
     body: 'Five years. Pause and feel the weight of that. Five complete rotations around the sun, woven together — every season shared, every year a new layer added to something extraordinary.',
     photos: [
-      { src: '../assets/year5.jpg', caption: 'Year Five' },
+      { src: 'assets/year-5-A.jpeg', caption: 'Year Five' },
     ]
   },
   {
@@ -65,7 +70,9 @@ const YEARS = [
     title: 'Petals Still\nFalling',
     body: 'Some people search their whole lives for this — and here it is, right here, still in bloom. Year six was proof that the magic doesn\'t diminish; it deepens.',
     photos: [
-      { src: '../assets/year6.jpg', caption: 'Year Six' },
+      { src: 'assets/year-6-A.jpg', caption: 'Year Six' },
+      { src: 'assets/year-6-B.jpg', caption: 'Year Six' },
+      { src: 'assets/year-6-C.jpg', caption: 'Year Six' },
     ]
   },
   {

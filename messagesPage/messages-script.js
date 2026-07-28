@@ -63,18 +63,16 @@ I didn't know it then, but that single moment would become the beginning of ever
 So here's to the start of us.`
   },
   {
-    title: "What I Love",
+    title: "I miss you",
     from: "A Quiet Confession",
-    date: "April 8, 2023",
+    date: "July 24, 2026",
     seal: "💌",
-    signature: "Yours, always —",
-    body: `I love the way you laugh when something catches you off guard.
-
-I love how you think deeply about small things and lightly about big ones.
-
-I love that you exist in this world at the same time as me.
-
-Not everyone gets to say that. I'm lucky I can.`
+    signature: "Your other half",
+    body: `I miss/     every bit of you
+    you/    define every bit of you
+    I feel incomplete/     without you
+    because you are/     my missing piece
+    my other half/    disappears`
   },
   {
     title: "A Rainy Day Note",

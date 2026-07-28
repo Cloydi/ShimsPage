@@ -62,7 +62,7 @@ const ALL_MEMORIES = [
     id: 2,
     title: 'Golden Hour Walk',
     date: '2023-04-08',
-    tag: 'quiet',
+    tag: 'random',
     caption: 'No destination, just the two of us and the fading light painting everything gold.',
     mood: '🌅',
     imgSrc: 'assets/moment2.webp',
@@ -106,7 +106,7 @@ const ALL_MEMORIES = [
     id: 6,
     title: 'Rainy Day In',
     date: '2024-05-11',
-    tag: 'quiet',
+    tag: 'random',
     caption: 'Blankets, bad movies, and the best kind of nothing.',
     mood: '☔',
     imgSrc: 'assets/moment6.jpeg',
@@ -128,7 +128,7 @@ const ALL_MEMORIES = [
     id: 8,
     title: 'Sunday Morning',
     date: '2024-09-15',
-    tag: 'quiet',
+    tag: 'random',
     caption: 'Coffee, silence, and you. That was enough.',
     mood: '☕',
     imgSrc: 'assets/video3.mp4',
@@ -139,7 +139,7 @@ const ALL_MEMORIES = [
     id: 9,
     title: 'Sunday Morning',
     date: '2024-09-15',
-    tag: 'quiet',
+    tag: 'random',
     caption: 'Coffee, silence, and you. That was enough.',
     mood: '☕',
     imgSrc: 'assets/moment8.jpeg',
@@ -150,7 +150,7 @@ const ALL_MEMORIES = [
     id: 10,
     title: 'Sunday Morning',
     date: '2024-09-15',
-    tag: 'quiet',
+    tag: 'random',
     caption: 'Coffee, silence, and you. That was enough.',
     mood: '☕',
     imgSrc: 'assets/video2.mp4',
@@ -161,7 +161,7 @@ const ALL_MEMORIES = [
     id: 11,
     title: 'Sunday Morning',
     date: '2024-09-15',
-    tag: 'quiet',
+    tag: 'random',
     caption: 'Coffee, silence, and you. That was enough.',
     mood: '☕',
     imgSrc: 'assets/moment9.jpeg',
@@ -170,7 +170,7 @@ const ALL_MEMORIES = [
   },
 ];
 
-const TAG_LABELS = { adventure: 'Adventure', quiet: 'Quiet', food: 'Food', milestone: 'Milestone' };
+const TAG_LABELS = { adventure: 'Adventure', random: 'Random', food: 'Food', milestone: 'Milestone' };
 function fmtDate(str) {
   if (!str) return '';
   return new Date(str + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });

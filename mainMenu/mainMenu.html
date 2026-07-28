@@ -7,7 +7,7 @@
   <title>For Shim</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="mainMenu-style.css">
-  <link rel="icon" href="logo.png">
+  <link rel="icon" href="../logo.png">
 
 </head>
 <body>
@@ -99,7 +99,7 @@
 
     <!-- Scene 0: The Start -->
     <div class="scene active" id="scene-0">
-      <img class="scene-art" src="assets/NewGameScene.jpeg" alt="The Start Scene"
+      <img class="scene-art" src="../assets/NewGameScene.jpeg" alt="The Start Scene"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="scene-placeholder" style="display:none;">
         <div class="placeholder-badge">scene · 1 of 5</div>
@@ -120,7 +120,7 @@
       <video class="scene-art" id="scene-3-video"
              autoplay loop muted playsinline
              onerror="this.style.display='none'; document.getElementById('scene-3-placeholder').style.display='flex';">
-        <source src="assets/file.mp4" type="video/mp4">
+        <source src="../assets/file.mp4" type="video/mp4">
       </video>
       <div class="scene-placeholder" style="display:none;">
         <div class="placeholder-badge">scene · 2 of 5</div>
@@ -136,7 +136,7 @@
 
     <!-- Scene 2: Multiplayer -->
     <div class="scene" id="scene-2">
-      <img class="scene-art" src="assets/MessagesScene2.jpg" alt="Multiplayer Scene"
+      <img class="scene-art" src="../assets/MessagesScene2.jpg" alt="Multiplayer Scene"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="scene-placeholder" style="display:none;">
         <div class="placeholder-badge">scene · 3 of 5</div>
@@ -155,7 +155,7 @@
       <video class="scene-art" id="scene-3-video"
              autoplay loop muted playsinline
              onerror="this.style.display='none'; document.getElementById('scene-3-placeholder').style.display='flex';">
-        <source src="assets/GamesScene.mp4" type="video/mp4">
+        <source src="../assets/GamesScene.mp4" type="video/mp4">
       </video>
       <div class="scene-placeholder" id="scene-3-placeholder" style="display:none;">
         <div class="placeholder-badge">scene · 4 of 5 · video</div>
@@ -176,7 +176,7 @@
 
     <!-- Scene 4: Settings -->
     <div class="scene" id="scene-4">
-      <img class="scene-art" src="assets/ExtrasScene.jpeg" alt="Settings Scene"
+      <img class="scene-art" src="../assets/ExtrasScene.jpeg" alt="Settings Scene"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="scene-placeholder" style="display:none;">
         <div class="placeholder-badge">scene · 5 of 5</div>
@@ -199,8 +199,8 @@
 
 </div>
 
+<script src="../assets/js/persistent-audio.js"></script>
 <script src="mainMenu-script.js"></script>
-<script src="assets/js/persistent-audio.js"></script>
 
 </body>
 </html>

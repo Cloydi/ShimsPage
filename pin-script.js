@@ -162,7 +162,7 @@ function triggerSuccess() {
     overlay.classList.add('active');
     // Navigate to main menu after the success animation
     setTimeout(() => {
-      window.location.href = 'mainMenu.html';
+      window.location.href = 'mainMenu/mainMenu.html';
     }, 1600);
   }, 400);
 }

@@ -177,19 +177,18 @@ style.textContent = `
 document.head.appendChild(style);
 // ── PAGE NAVIGATION ──────────────────────────────────────────────────
 const NAV_ROUTES = {
-  0: 'startPage/start.html',
-  1: 'momentsPage/moments.html', 
-  2: 'messagesPage/messages.html', 
-  3: 'customGamePage/game.html',
-  4: 'extrasPage/extras.html',
+  0: '../startPage/start.html',
+  1: '../momentsPage/moments.html', 
+  2: '../messagesPage/messages.html', 
+  3: '../customGamePage/game.html',
+  4: '../extrasPage/extras.html',
 };
 
 document.querySelectorAll('.menu-item').forEach(item => {
   item.addEventListener('click', function () {
     const idx = parseInt(this.dataset.scene, 10);
     if (NAV_ROUTES[idx]) {
-      // Small delay so the ripple is visible before navigating
-      setTimeout(() => { window.location.href = NAV_ROUTES[idx]; }, 320);
+      window.location.href = NAV_ROUTES[idx];
     }
   });
 });

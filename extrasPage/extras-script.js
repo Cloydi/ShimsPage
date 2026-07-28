@@ -35,9 +35,9 @@ const VINYLS = [
   },
   {
     id: 'v4',
-    title: 'Sayo',
-    artist: 'For Shim',
-    src: '../assets/music/track4.mp3',
+    title: 'If the World Was Ending',
+    artist: 'JP Saxe ft. Julia Michaels',
+    src: '../assets/music/JP Saxe - If The World Was Ending (Lyric Video) ft. Julia Michaels [RAov563V8vI].mp3',
     color1: '#307840', color2: '#10321a', grooveColor: 'rgba(60,140,70,.32)', labelColor: '#60b870',
   },
 ];
