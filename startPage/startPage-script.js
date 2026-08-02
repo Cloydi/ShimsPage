@@ -11,7 +11,6 @@ const YEARS = [
       { src: 'assets/year-0-A.jpeg', caption: 'Year Zero' },
       { src: 'assets/year-0-B.jpeg', caption: 'Year Zero' },
       { src: 'assets/year-0-C.jpeg', caption: 'Year Zero' }
-      // Add more: { src: '../assets/year0b.jpg', caption: 'Early days' },
     ]
   },
   {
@@ -28,9 +27,9 @@ const YEARS = [
   },
   {
     num: 2,
-    label: 'Year Two · Deepening',
+    label: 'Year Two · Pandemic',
     title: 'Roots Taking\nHold',
-    body: 'What was new became familiar. What was familiar became precious. The second year was a settling — not stagnation, but the way a tree sends its roots deeper into the earth.',
+    body: 'The pandemic tested our patience but also strengthened our bond. We learned to grow together, even when apart.',
     photos: [
       { src: 'assets/year-2-A.jpeg', caption: 'Year Two' },
       { src: 'assets/year-2-B.webp', caption: 'Year Two' },
@@ -48,9 +47,9 @@ const YEARS = [
   },
   {
     num: 4,
-    label: 'Year Four · Resilience',
+    label: 'Year Four · The College Experience',
     title: 'Through Every\nSeason',
-    body: 'Not all chapters are soft. Some are forged in difficulty, in distance, in the effort it takes to choose each other again and again. This year tested and proved.',
+    body: 'A fun year of exploration, drinking, and shared experience. Our chemistry only deepened and we knew ourselves better than ever.',
     photos: [
       { src: 'assets/year-4-A.webp', caption: 'Year Four' },
     ]
@@ -59,7 +58,7 @@ const YEARS = [
     num: 5,
     label: 'Year Five · Milestone',
     title: 'Half a Decade\nof Us',
-    body: 'Five years. Pause and feel the weight of that. Five complete rotations around the sun, woven together — every season shared, every year a new layer added to something extraordinary.',
+    body: 'Five years. Not only our relationship, but we independently grew into the people we are now. We helped honed each other. And I\'ve never been prouder.',
     photos: [
       { src: 'assets/year-5-A.jpeg', caption: 'Year Five' },
     ]
@@ -68,7 +67,7 @@ const YEARS = [
     num: 6,
     label: 'Year Six · Abundance',
     title: 'Petals Still\nFalling',
-    body: 'Some people search their whole lives for this — and here it is, right here, still in bloom. Year six was proof that the magic doesn\'t diminish; it deepens.',
+    body: 'The passion I feel for you could burn villages. The love I feel for you could quench the sun. And I am certain you feel the same. That is how I know we are made for each other.',
     photos: [
       { src: 'assets/year-6-A.jpg', caption: 'Year Six' },
       { src: 'assets/year-6-B.jpg', caption: 'Year Six' },
@@ -79,9 +78,9 @@ const YEARS = [
     num: 7,
     label: 'Year Seven · Present',
     title: 'And Still,\nHere We Are',
-    body: 'Seven years of choosing, building, laughing, holding on. This page is still being written — and every day, it gets better. Here is where the story stands, and here is where it continues.',
+    body: 'Mahal kita. Seven years na. Seven years na kitang mahal.',
     photos: [
-      { src: '../assets/year7.jpg', caption: 'Year Seven' },
+      { src: 'assets/year-7-A.jpg', caption: 'Year Seven' },
     ]
   },
 ];

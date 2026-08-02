@@ -3,127 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Game · Jigsaw</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Lato:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+  <title>Custom Game · For Shim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="game-style.css">
   <link rel="icon" href="../logo.png">
+  <style>
+    /* Site-themed "Return" link, layered above the puzzle's own menu (top z-index: 10) */
+    .site-back-btn {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(217, 79, 135, 0.25);
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(42, 14, 30, 0.6);
+      transition: color 0.3s, border-color 0.3s, transform 0.2s;
+    }
+    .site-back-btn:hover {
+      color: #d94f87;
+      border-color: #d94f87;
+      transform: translateY(-1px);
+    }
+    .site-back-btn svg {
+      width: 13px; height: 13px;
+      stroke: currentColor; fill: none; stroke-width: 2;
+    }
+  </style>
 </head>
 <body>
 
-<canvas id="blossom-canvas"></canvas>
-<div class="bg-overlay"></div>
-<div class="scanlines"></div>
-
-<div class="corner corner-tl">
-  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
-</div>
-<div class="corner corner-br">
-  <svg viewBox="0 0 60 60"><path d="M2 58 L2 2 L58 2"/><path d="M12 48 L12 12 L48 12"/><circle cx="2" cy="2" r="2" fill="currentColor"/></svg>
-</div>
-
-<a class="back-btn" href="../mainMenu/mainMenu.html">
+<a class="site-back-btn" href="../mainMenu/mainMenu.html">
   <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
   Return
 </a>
 
-<!-- HEADER -->
-<header class="page-header">
-  <div class="eyebrow">Custom Game</div>
-  <h1>Life's a <span>Puzzle</span></h1>
-  <div class="tagline">Put us together</div>
-  <div class="header-divider"></div>
-</header>
-
-<!-- CONTROLS BAR -->
-<div class="controls-bar">
-  <!-- File upload -->
-  <div class="ctrl-group">
-    <span class="ctrl-label">Image</span>
-    <label class="file-pick">
-      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-      <span id="file-pick-label">Upload photo</span>
-      <input type="file" id="img-file" accept="image/*">
-    </label>
-  </div>
-
-  <!-- Difficulty -->
-  <div class="ctrl-group">
-    <span class="ctrl-label">Pieces</span>
-    <div class="diff-btns">
-      <button class="diff-btn active" data-grid="3">3×3</button>
-      <button class="diff-btn" data-grid="4">4×4</button>
-      <button class="diff-btn" data-grid="5">5×5</button>
-      <button class="diff-btn" data-grid="6">6×6</button>
-    </div>
-  </div>
-
-  <!-- Actions -->
-  <div class="ctrl-group ctrl-right">
-    <button class="action-btn action-btn--ghost" id="btn-peek">
-      <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-      Peek
-    </button>
-    <button class="action-btn action-btn--ghost" id="btn-shuffle">
-      <svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
-      Shuffle
-    </button>
-    <button class="action-btn" id="btn-solve">
-      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      Solve
-    </button>
-  </div>
-</div>
-
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat">
-    <span class="stat-val" id="stat-moves">0</span>
-    <span class="stat-lbl">moves</span>
-  </div>
-  <div class="stat-sep">❀</div>
-  <div class="stat">
-    <span class="stat-val" id="stat-time">0:00</span>
-    <span class="stat-lbl">time</span>
-  </div>
-  <div class="stat-sep">❀</div>
-  <div class="stat">
-    <span class="stat-val" id="stat-left">—</span>
-    <span class="stat-lbl">pieces left</span>
-  </div>
-</div>
-
-<!-- GAME AREA -->
-<div class="game-area">
-
-  <!-- BOARD: free-placement canvas -->
-  <div class="board-wrap">
-    <div class="board-label" id="board-label">Drag pieces into place</div>
-    <div class="board" id="board">
-      <!-- ghost preview image -->
-      <div class="board-ghost" id="board-ghost"></div>
-    </div>
-  </div>
-
-</div>
-
-<!-- WIN OVERLAY -->
-<div class="win-overlay" id="win-overlay">
-  <div class="win-box">
-    <div class="win-emoji">🌸</div>
-    <h2 class="win-title">You did it!</h2>
-    <p class="win-sub">You complete us</p>
-    <div class="win-stats">
-      <span id="win-moves"></span> moves &nbsp;·&nbsp; <span id="win-time"></span>
-    </div>
-    <button class="win-btn" id="win-play-again">Play Again</button>
-  </div>
-</div>
-
-<!-- PEEK OVERLAY -->
-<div class="peek-overlay" id="peek-overlay">
-  <img id="peek-img" src="" alt="Full image">
-  <p class="peek-hint">Click anywhere to close</p>
-</div>
+<div id=forPuzzle></div>
+<div id="menu">
+    <p id="controls">close controls</p>
+    <div id="showhide">
+        <hr>
+        <p class="center"><button type="button" id="help">instructions</button></p>
+        <hr>
+        <p class="center">
+            <button type="button" id="default">default image</button>
+            <button type="button" id="load">load image</button>
+        </p>
+        <p class="center"><button type="button" id="show">show image</button></p>
+        <p><input type=checkbox id="enablerot"><label for="enablerot" id="enablerotlabel">enable rotation</label>
+        </p>
+        <p>shape: <select id="shape">
+                <option value="1" selected>classic</option>
+                <option value="2">triangle</option>
+                <option value="3">round</option>
+                <option value="4">straight</option>
+            </select></p>
+        <p>number of pieces: <select id="nbpieces">
+                <option selected>12</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+                <option>200</option>
+                <option>500</option>
+                <option>1000</option>
+            </select></p>
+        <p>between connected pieces: <select id="drawmode">
+                <option value="1" selected>thin line</option>
+                <option value="2">flat</option>
+                <option value="3">bevel</option>
+            </select></p>
+        <p class="center"><button type="button" id="start">start game</button><button type="button" id="stop">stop
+                game</button></p>
+        <hr>
+        <p>storage: <button type="button" id="helpstorage">?</button></p>
+        <p class="center"><button type="button" id="save">save game</button><button type="button"
+                id="restore">restore game</button></p>
+        <hr>
+        <p>file: <button type="button" id="helpfile">?</button></p>
+        <p class="center"><button type="button" id="fsave">save game</button><button type="button"
+                id="frestore">restore game</button></p>
+        <p>save name: <input type="text" id="saveas"><span id="saveext"></span></p>
+    </div> <!-- showhide -->
+</div> <!-- menu -->
 
 <script src="game-script.js"></script>
 <script src="../assets/js/persistent-audio.js"></script>
