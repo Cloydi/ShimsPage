@@ -50,50 +50,43 @@ const petals = Array.from({ length: 110 }, () => { const p = randomPetal(); p.y 
 const MESSAGES = [
   {
     title: "The Very First",
-    from: "A Letter From Him",
-    date: "February 14, 2023",
+    from: "The Stairs",
+    date: "2017",
     seal: "🌸",
     signature: "Forever yours,",
-    body: `I still remember the first time I saw your name light up my screen.
-    
-Something about it felt different — like the universe had quietly rearranged itself just to make room for you.
-
-I didn't know it then, but that single moment would become the beginning of everything I'd ever want to hold onto.
-
-So here's to the start of us.`
+    body: `Descending from the stairs, I saw you for the first time.
+    We made acquaintances to friends very quickly, like puzzles fitting.
+    I just didn\'t expect us to be lovers.
+    Funny how life works.`
   },
   {
     title: "I miss you",
-    from: "A Quiet Confession",
+    from: "C.Y.",
     date: "July 24, 2026",
     seal: "💌",
     signature: "Your other half",
     body: `I miss/     every bit of you
-    you/    define every bit of you
+    you/    define every bit of me
     I feel incomplete/     without you
     because you are/     my missing piece
     my other half/    disappears`
   },
   {
-    title: "A Rainy Day Note",
-    from: "Sent with Warmth",
-    date: "June 21, 2023",
-    seal: "☔",
-    signature: "Warmly,",
-    body: `On days when the sky forgets itself, I think of you.
-
-Not because you fix the rain — but because you make the rain feel like something worth staying in.
-
-Cozy and close and ours.
-
-I hope you know you're my favorite kind of shelter.`
+    title: "A Tourist",
+    from: "C.Y.",
+    date: "June 25, 2026",
+    seal: "🌆",
+    signature: "",
+    body: `I am an outcast
+    Visited this pretty town
+    Settled in like home`
   },
   {
-    title: "The Adventure Log",
-    from: "Field Notes",
-    date: "September 3, 2023",
+    title: "A Letter",
+    from: "the heart",
+    date: "August 11, 2026",
     seal: "🗺️",
-    signature: "Your fellow wanderer,",
+    signature: "Sincerely yours,",
     body: `We got lost four times.
 
 Once on purpose, twice by accident, and once because neither of us wanted to admit we had no idea where we were going.
@@ -103,8 +96,8 @@ But every wrong turn led somewhere I would have never found alone.
 That's what adventures with you feel like. Worth every detour.`
   },
   {
-    title: "One Year",
-    from: "An Anniversary Letter",
+    title: "What I Hate About You",
+    from: "C.Y.",
     date: "February 14, 2024",
     seal: "💕",
     signature: "With all of me,",
@@ -119,8 +112,8 @@ A thousand times, I would.
 Happy anniversary, my love.`
   },
   {
-    title: "Late Night Thoughts",
-    from: "3:14 AM",
+    title: "What I Miss About You",
+    from: "C.Y.",
     date: "November 2, 2023",
     seal: "🌙",
     signature: "From the sleepless corner of my heart,",
@@ -135,7 +128,7 @@ You matter in the kind of way that keeps me awake in the best possible sense.
 Goodnight. Dream of something good. I'll be here.`
   },
   {
-    title: "The Silly One",
+    title: "What I Love About You",
     from: "Light Dispatch",
     date: "July 20, 2023",
     seal: "🎮",
@@ -149,84 +142,29 @@ This is a formal written record that the game was unfair, the rules were unclear
 I also want to formally note that I had a wonderful time and would lose to you again any day of the week.`
   },
   {
-    title: "What Home Feels Like",
+    title: "everything I like about you",
     from: "A Simple Truth",
     date: "May 11, 2024",
     seal: "🏡",
-    signature: "Home,",
-    body: `Home isn't always a place.
-
-Sometimes it's a voice, a name in your contact list, a laugh that sounds like relief.
-
-You've become the kind of familiar that makes everything else feel less sharp.
-
-That's not small. That's everything.
-
-You are, genuinely, my favorite place to be.`
-  },
-  {
-    title: "Just Because",
-    from: "No Reason Needed",
-    date: "March 3, 2024",
-    seal: "✨",
-    signature: "Because I wanted to —",
-    body: `No occasion. No reason.
-
-Just the fact that you exist and that you're you and that somehow I get to know you.
-
-That's enough. That's more than enough.
-
-Consider this a letter sent purely out of an abundance of affection and absolutely nowhere else to put it.
-
-You're wonderful. That's all.`
-  },
-  {
-    title: "To Be Continued",
-    from: "A Promise",
-    date: "An open date",
-    seal: "🌷",
-    signature: "Still writing,",
-    body: `There are still so many pages left.
-
-So many ordinary Tuesdays to share. So many meals to argue about. So many hands to hold during the boring parts and the beautiful ones.
-
-I don't know everything that's coming.
-
-But I know I want to find out with you.
-
-This isn't the end of the scroll. We're still writing it.`
-  },
-    {
-    title: "To Be Continued",
-    from: "A Promise",
-    date: "An open date",
-    seal: "🌷",
-    signature: "Still writing,",
-    body: `There are still so many pages left.
-
-    So many ordinary Tuesdays to share. So many meals to argue about. So many hands to hold during the boring parts and the beautiful ones.
-
-    I don't know everything that's coming.
-
-    But I know I want to find out with you.
-
-    This isn't the end of the scroll. We're still writing it.`
-  },
-    {
-    title: "To Be Continued",
-    from: "A Promise",
-    date: "An open date",
-    seal: "🌷",
-    signature: "Still writing,",
-    body: `There are still so many pages left.
-
-    So many ordinary Tuesdays to share. So many meals to argue about. So many hands to hold during the boring parts and the beautiful ones.
-
-    I don't know everything that's coming.
-
-    But I know I want to find out with you.
-
-    This isn't the end of the scroll. We're still writing it.`
+    signature: "everything i like about you",
+    body: `your eyes, your smiles, your bosom
+    your cheeks, your lips, your buttocks
+    your hands on mine, the jitters
+    all your physical features
+    
+    your laugh, cries, every nuance
+    you\'re everything i dreamed once
+    a giver, carer, lover
+    with you, everything's better
+    
+    your neck, my lips harmonize
+    its smell got me hypnotize
+    unfazed contact of our eyes
+    your soft skin i memorize
+    
+    every little bit of me
+    longs every bit of you cause
+    everything about you is`
   },
 ];
 

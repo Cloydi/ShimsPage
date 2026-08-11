@@ -61,6 +61,9 @@ const YEARS = [
     body: 'Five years. Not only our relationship, but we independently grew into the people we are now. We helped honed each other. And I\'ve never been prouder.',
     photos: [
       { src: 'assets/year-5-A.jpeg', caption: 'Year Five' },
+      { src: 'assets/year-5-B.jpg', caption: 'Year Five' },
+      { src: 'assets/year-5-C.jpg', caption: 'Year Five' },
+      { src: 'assets/year-5-D.jpg', caption: 'Year Five' },
     ]
   },
   {

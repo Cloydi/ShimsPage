@@ -60,7 +60,7 @@ const ALL_MEMORIES = [
   },
   {
     id: 2,
-    title: 'Golden Hour Walk',
+    title: 'Our Little Escapes',
     date: '2026',
     tag: 'adventure',
     caption: 'Overtime got a litte less stressful because of our escapes',
@@ -175,7 +175,7 @@ const ALL_MEMORIES = [
     tag: 'biga',
     caption: 'Blurred like the nights of fun.',
     mood: '⛈️',
-    imgSrc: 'assets/moments10.jpeg',
+    imgSrc: 'assets/moment10.jpeg',
     mediaType: 'image',
     fav: false,
   },
