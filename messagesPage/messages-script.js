@@ -84,62 +84,46 @@ const MESSAGES = [
   {
     title: "A Letter",
     from: "the heart",
-    date: "August 11, 2026",
+    date: "August 12, 2026",
     seal: "🗺️",
     signature: "Sincerely yours,",
-    body: `We got lost four times.
-
-Once on purpose, twice by accident, and once because neither of us wanted to admit we had no idea where we were going.
-
-But every wrong turn led somewhere I would have never found alone.
-
-That's what adventures with you feel like. Worth every detour.`
+    body: `Kabalo ko nga dugay na since Ive last made a letter. Now I am writing you a digital one.
+    Happy 7th annivaersary baby. I love you so much. Everything that I am is because of you.
+    I sincerely believe that I am better because of you. You are truly my better half. I could not see a future without you.
+    Let\'s continue extend this relationship. EXTEND to 8080.`
   },
   {
     title: "What I Hate About You",
     from: "C.Y.",
-    date: "February 14, 2024",
+    date: "August 12, 2026",
     seal: "💕",
     signature: "With all of me,",
-    body: `One year of choosing you.
-
-Three hundred and sixty-five days of "good morning" and "are you okay" and "tell me everything."
-
-If I had to do it again — the waiting, the uncertainty, the slow fall — I would.
-
-A thousand times, I would.
-
-Happy anniversary, my love.`
+    body: `I hate the distance between us
+    I hate that I cant kiss you always
+    I hate that I dont see every combination of the outfits you wear
+    I hate that I didnt witness every version of you
+    `
   },
   {
     title: "What I Miss About You",
     from: "C.Y.",
-    date: "November 2, 2023",
+    date: "August 12, 2026",
     seal: "🌙",
-    signature: "From the sleepless corner of my heart,",
-    body: `It's late and I should be asleep.
-
-But my mind keeps circling back to you — the way it always does when the world gets quiet and there's nothing left to distract me from what matters.
-
-You matter.
-
-You matter in the kind of way that keeps me awake in the best possible sense.
-
-Goodnight. Dream of something good. I'll be here.`
+    signature: "Missing you always,",
+    body: `The feeling of relaxation
+    Your warmth
+    The comfort
+    `
   },
   {
     title: "What I Love About You",
     from: "Light Dispatch",
     date: "July 20, 2023",
     seal: "🎮",
-    signature: "The one who definitely won,",
-    body: `Okay fine. You won.
-
-But only because I let you. (I didn't let you.)
-
-This is a formal written record that the game was unfair, the rules were unclear, and your victory celebration was excessive.
-
-I also want to formally note that I had a wonderful time and would lose to you again any day of the week.`
+    signature: "love,",
+    body: `I love you. 
+    Simply said, I love you.
+    `
   },
   {
     title: "everything I like about you",
