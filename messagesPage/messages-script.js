@@ -88,7 +88,7 @@ const MESSAGES = [
     seal: "🗺️",
     signature: "Sincerely yours,",
     body: `Kabalo ko nga dugay na since Ive last made a letter. Now I am writing you a digital one.
-    Happy 7th annivaersary baby. I love you so much. Everything that I am is because of you.
+    Happy 7th anniversary baby. I love you so much. Everything that I am is because of you.
     I sincerely believe that I am better because of you. You are truly my better half. I could not see a future without you.
     Let\'s continue extend this relationship. EXTEND to 8080.`
   },
