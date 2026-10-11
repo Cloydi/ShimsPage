@@ -83,7 +83,8 @@ const YEARS = [
     title: 'And Still,\nHere We Are',
     body: 'Mahal kita. Seven years na. Seven years na kitang mahal.',
     photos: [
-      { src: 'assets/year-7-A.jpg', caption: 'Year Seven' },
+      { src: 'assets/year-7-C.jpeg', caption: 'Year Seven' },
+      { src: 'assets/year-7-D.jpeg', caption: 'Year Seven' },
     ]
   },
 ];
